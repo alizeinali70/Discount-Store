@@ -1,62 +1,72 @@
-﻿
+﻿@model Discount_Store.Models.Item
 @{
     ViewData["Title"] = "Index";
 }
 
 
 <div class="row">
-    <div class="col-md-12 float-left">
-        <form action="Add" method="post">
-            <div class="col-md-4 float-left">
-                <div class="col-md-3 float-left">
-                    Sku : Vase
-                </div>
-                <div class="col-md-3 float-left">
-                    Price: 1.2€
-                </div>
-                <div class="col-md-3 float-left">
-                    count :  <input class="form-control float-left" type="number" name="Count" value="" />
-                </div>
-                <div class="col-md-3 float-left">
-                    <input type="button" class="btn-block btn-primary" name="Add" value="Add" />
-                </div>
-            </div>
-            <div class="col-md-4 float-left">
-                <div class="col-md-3 float-left">
-                    Sku : Big mug
-                </div>
-                <div class="col-md-3 float-left">
-                    Price: 1€
-                </div>
-                <div class="col-md-3 float-left">
-                    count : <input class="form-control float-left" type="number" name="Count" value="" />
-                </div>
-                <div class="col-md-3 float-left">
-                    <input type="button" class="btn-block btn-primary" name="Add" value="Add" />
-                </div>
-            </div>
-            <div class="col-md-4 float-left">
-                <div class="col-md-3 float-left">
-                    Sku : Napkins pack
-                </div>
-                <div class="col-md-3 float-left">
-                    Price: 0.45€
-                </div>
-                <div class="col-md-3 float-left">
-                    count :<input class="form-control float-left" type="number" name="Count" value="" />
-                </div>
-                <div class="col-md-3 float-left">
-                    <input type="button" class="btn-block btn-primary" name="Add" value="Add" />
-                </div>
-            </div>
-        </form>
-        <div class="col-12 col-md-12">
-            <div class="col-md-4 float-left"></div>
-            <div class="col-md-4 float-left">
-                <input type="button" class="btn-block btn-success" name="Save" value="Calc" />
-            </div>
-            <div class="col-md-4 float-left"></div>
+    <form asp-action="Add">
+        <div class="col-md-12 float-left">
 
+            <div class="col-md-12 float-left">
+                <div class="col-md-3 float-left">
+                    Sku : <input class="form-control" asp-for="SKU" value="Vase" />
+                </div>
+                <div class="col-md-3 float-left">
+                    Price: <input class="form-control" asp-for="Price" value="1.2" />
+                </div>
+                <div class="col-md-3 float-left">
+                    count :  <input class="form-control float-left" asp-for="Count" type="number" name="Count" value="" />
+                </div>
+                <div class="col-md-3 float-left">
+                    <input type="submit" class="btn-block btn-primary" name="Add" value="Add" />
+                </div>
+            </div>
         </div>
+    </form>
+    <form asp-action="Add">
+        <div class="col-md-12 float-left">
+            <div class="col-md-12 float-left">
+                <div class="col-md-3 float-left">
+                    Sku :<input class="form-control" asp-for="SKU" value="Big mug" />
+                </div>
+                <div class="col-md-3 float-left">
+                    Price: <input class="form-control" asp-for="Price" value="1" />
+                </div>
+                <div class="col-md-3 float-left">
+                    count : <input class="form-control float-left" asp-for="Count" type="number" name="Count" value="" />
+                </div>
+                <div class="col-md-3 float-left">
+                    <input type="submit" class="btn-block btn-primary" name="Add" value="Add" />
+                </div>
+            </div>
+        </div>
+    </form>
+    <form asp-action="Add">
+        <div class="col-md-12 float-left">
+            <div class="col-md-12 float-left">
+                <div class="col-md-3 float-left">
+                    Sku : <input class="form-control" asp-for="SKU" value=" Napkins pack" />
+                </div>
+                <div class="col-md-3 float-left">
+                    Price: <input class="form-control" asp-for="Price" value="0.45" />
+                </div>
+                <div class="col-md-3 float-left">
+                    count : <input class="form-control float-left" type="number" asp-for="Count" name="Count" value="" />
+                </div>
+                <div class="col-md-3 float-left">
+                    <input type="submit" class="btn-block btn-primary" name="Add" value="Add" />
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="col-12 col-md-12 float-left">
+        <div class="col-md-4 float-left"></div>
+        <div class="col-md-4 float-left">
+            <input type="button" class="btn-block btn-success" name="Save" value="Calc" />
+        </div>
+        <div class="col-md-4 float-left"></div>
+
     </div>
+</div>
 </div>

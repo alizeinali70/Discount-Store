@@ -9,9 +9,11 @@ namespace Discount_Store.Repositories
 {
     public class CartService : ICartService
     {
+        Order order = new Order();
+
         public void Add(Item item)
         {
-            throw new NotImplementedException();
+            order.items.Add(item);
         }
         public void Remove(Item item)
         {

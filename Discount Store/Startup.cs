@@ -1,3 +1,5 @@
+using Discount_Store.Interfaces;
+using Discount_Store.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -23,6 +25,7 @@ namespace Discount_Store
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<ICartService, CartService>();
             services.AddControllersWithViews();
         }
 
@@ -50,7 +53,7 @@ namespace Discount_Store
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Order}/{action=Index}/{id?}");
             });
         }
     }
