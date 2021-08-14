@@ -11,6 +11,8 @@ namespace Discount_Store.Models
         [Key]
         public int ID { get; set; }
         public string SKU { get; set; }
+        public int Count { get; set; }
         public float Price { get; set; }
+        public Discount Discount { get; set; }
     }
 }
