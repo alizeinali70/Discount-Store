@@ -26,5 +26,15 @@ namespace Discount_Store.Controllers
             _cartService.Add(item);
             return View("Index");
         }
+        public IActionResult Remove(Item item)
+        {
+            _cartService.Remove(item);
+            return View("Index");
+        }
+        public double GetTotal()
+        {
+            _cartService.GetTotal();
+            return 0;
+        }
     }
 }
