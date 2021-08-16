@@ -20,7 +20,6 @@ namespace Discount_Store.Controllers
         public IActionResult Index()
         {
             TempData["GetTotal"] = GetTotal();
-            findall();
             return View();
         }
         public IActionResult Add(Item item)

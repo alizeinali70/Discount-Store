@@ -41,16 +41,16 @@ namespace Discount_Store.Repositories
 
             foreach (var item in all_orders)
             {
-                if (bigmugCount == 2)
+                if (bigmugCount >= 2)
                 {
                     if (item.SKU == "Big mug")
-                        item.Price = (float)(item.Price - 0.25);
+                        item.Price = (float)(0.75);
                 }
 
-                if (NapkinspackCount == 3)
+                if (NapkinspackCount >= 3)
                 {
                     if (item.SKU == "Napkins pack")
-                        item.Price = (float)(item.Price - 0.15);
+                        item.Price = (float)(0.30);
                 }
 
                 total += item.Price;
