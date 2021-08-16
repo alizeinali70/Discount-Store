@@ -19,8 +19,8 @@
                     Price: <input class="form-control" asp-for="Price" value="1.2" />
                 </div>
 
-                <div class="col-md-3 float-left">
-                    <input type="submit" class="btn-block btn-primary" name="Add" value="Add" />
+                <div class="col-md-3 float-left pt-3">
+                    <input type="submit" class="btn-block btn-success" name="Add" value="Add" />
                     @Html.ActionLink("Remove", "Remove", "Order", new { @SKU = "Vase" })
                 </div>
             </div>
@@ -39,10 +39,10 @@
                     Price: <input class="form-control" asp-for="Price" value="1" />
                 </div>
 
-                <div class="col-md-3 float-left">
-                    <input type="submit" class="btn-block btn-primary" name="Add" value="Add" />
+                <div class="col-md-3 float-left pt-3">
+                    <input type="submit" class="btn-block btn-success" name="Add" value="Add" />
 
-                    @Html.ActionLink("Remove", "Remove", "Order", new { @SKU = "Big mug" })
+                    @Html.ActionLink("Remove", "Remove", "Order", new { @SKU = "Big mug"})
                 </div>
             </div>
         </div>
@@ -58,8 +58,8 @@
                 <div class="col-md-3 float-left">
                     Price: <input class="form-control" asp-for="Price" value="0.45" />
                 </div>
-                <div class="col-md-3 float-left">
-                    <input type="submit" class="btn-block btn-primary" name="Add" value="Add" />
+                <div class="col-md-3 float-left pt-3">
+                    <input type="submit" class="btn-block btn-success" name="Add" value="Add" />
                     @Html.ActionLink("Remove", "Remove", "Order", new { @SKU = "Napkins pack" })
                 </div>
             </div>
@@ -67,12 +67,14 @@
     </form>
     <div class="col-12 col-md-12 float-left">
         <form asp-action="GetTotal">
-            <div class="col-md-4 float-left"></div>
             <div class="col-md-4 float-left">
-                <input type="submit" class="btn-block btn-success" name="Save" value="Calc" />
+             TotalPrice:   @TempData["GetTotal"]
             </div>
-            <div class="col-md-4 float-left"></div>
+            <div class="col-md-4 float-left">
+                @*<input type="submit" class="btn-block btn-success" name="Save" value="Calc" />*@
+            </div>
+            <div class="col-md-4 float-left">
+            </div>
         </form>
     </div>
-</div>
 </div>

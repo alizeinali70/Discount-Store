@@ -10,7 +10,6 @@ namespace Discount_Store.Interfaces
     {
         void Add(Item item);
         void Remove(Item item);
-        double GetTotal();
-
+        float GetTotal();
     }
 }

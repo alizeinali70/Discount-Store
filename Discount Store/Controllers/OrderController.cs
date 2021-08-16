@@ -19,22 +19,28 @@ namespace Discount_Store.Controllers
 
         public IActionResult Index()
         {
+            TempData["GetTotal"] = GetTotal();
+            findall();
             return View();
         }
         public IActionResult Add(Item item)
         {
             _cartService.Add(item);
+            TempData["GetTotal"] = GetTotal();
             return View("Index");
+            //return Redirect(nameof(Index));
         }
         public IActionResult Remove(Item item)
         {
             _cartService.Remove(item);
+            TempData["GetTotal"] = GetTotal();
             return View("Index");
         }
-        public double GetTotal()
+        public float GetTotal()
         {
-            _cartService.GetTotal();
-            return 0;
+            float t = _cartService.GetTotal();
+            return t;
         }
+       
     }
 }

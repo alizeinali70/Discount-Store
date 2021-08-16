@@ -25,23 +25,39 @@ namespace Discount_Store.Repositories
         public void Remove(Item item)
         {
             var selected_item = _db.Items.FirstOrDefault(x => x.SKU == item.SKU);
-            _db.Remove(selected_item);
-            _db.SaveChanges();
+            if (selected_item != null)
+            {
+                _db.Remove(selected_item);
+                _db.SaveChanges();
+            }
         }
-        public double GetTotal()
+        public float GetTotal()
         {
             var all_orders = _db.Items.ToList();
-            double total = 0;
+            float total = 0;
             var vaseCount = all_orders.Where(x => x.SKU == "Vase").Count();
             var bigmugCount = all_orders.Where(x => x.SKU == "Big mug").Count();
             var NapkinspackCount = all_orders.Where(x => x.SKU == "Napkins pack").Count();
-            
+
             foreach (var item in all_orders)
             {
+                if (bigmugCount == 2)
+                {
+                    if (item.SKU == "Big mug")
+                        item.Price = (float)(item.Price - 0.25);
+                }
 
+                if (NapkinspackCount == 3)
+                {
+                    if (item.SKU == "Napkins pack")
+                        item.Price = (float)(item.Price - 0.15);
+                }
+
+                total += item.Price;
             }
 
             return total;
         }
+      
     }
 }
